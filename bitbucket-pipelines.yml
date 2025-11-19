@@ -7,5 +7,5 @@ pipelines:
     - step:
         name: 'Run: CI'
         script:
-          - COMMON_REPO_URL=https://api.bitbucket.org/2.0/repositories/kosukefukumori/ipiii2024-ci/src/main/ci.sh
+          - COMMON_REPO_URL=https://api.bitbucket.org/2.0/repositories/isoyama_main/ipiii2025-ci/src/main/ci.sh
           - curl -sS -H "Authorization:Bearer $COMMON_REPO_PAT" $COMMON_REPO_URL | bash
