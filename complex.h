@@ -15,8 +15,13 @@ typedef struct {
 
 // プロトタイプ宣言部
 //↓↓↓↓ 3323 武中優成 記述部(この範囲以外に追加しない)
-complex makeComp(double real, double image);
-complex addComp(complex a, complex b);
+complex makeComp(double real, double image);    //1
+complex addComp(complex a, complex b);          //3
+complex cmulComp(complex a, double k);          //5
+double getR2(complex a);                        //7
+complex invComp(complex a);                     //9
+double getR(complex a);                         //11
+void printComp(complex a);                      //13
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外に追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
