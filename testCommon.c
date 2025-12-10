@@ -1,5 +1,5 @@
 #include "testCommon.h"
-#include "complex.h"    //←追加
+#include "complex.h"    //←12/8追加
 
 #include <stdio.h>
 #include <stdlib.h>
