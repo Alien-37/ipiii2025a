@@ -27,7 +27,13 @@ void printComp(complex a);                      //13
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //↓↓↓↓ 3342 宮坂卓真 記述部(この範囲以外に追加しない)
-complex makeCompRT(double r, double theta);
+complex makeCompRT(double r, double theta);     //2
+complex subComp(complex a, complex b);          //4
+complex mulComp(complex a, complex b);          //6
+complex conjComp(complex a);                    //8
+complex divComp(complex a,complex b);           //10
+double getTheta(complex a);                     //12
+void printCompRT(complex a);                    //14
 
 
 
