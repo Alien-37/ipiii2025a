@@ -34,11 +34,11 @@ complex cmulComp(complex a, double k){          //5
     return ans;
 }
 
-double getR2(complex a){
+double getR2(complex a){                        //7
     return a.real * a.real + a.image * a.image;
 }
 
-complex invComp(complex a) {
+complex invComp(complex a) {                    //9
     complex ans;
     double r2 = getR2(a);   
 
@@ -48,18 +48,17 @@ complex invComp(complex a) {
     return ans;
 }
 
-double getR(complex a) {
+double getR(complex a) {                        //11
     return sqrt(getR2(a));
 }
 
-void printComp(complex a) {
+void printComp(complex a) {                     //13
     if (a.image >= 0) {
         printf("%g+%gj\n", a.real, a.image);
     } else {
         printf("%g%gj\n", a.real, a.image);
     }
 }
-
 
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
@@ -107,7 +106,5 @@ complex getTheta(complex a){
 
 
 //↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)
-
-
 
 // ここから下には何も追記しないでください。
