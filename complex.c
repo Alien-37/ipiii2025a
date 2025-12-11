@@ -48,6 +48,11 @@ complex invComp(complex a) {
     return ans;
 }
 
+double getR(complex a) {
+    return sqrt(getR2(a));
+}
+
+
 
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
