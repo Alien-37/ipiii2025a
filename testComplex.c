@@ -51,6 +51,21 @@ void testAddComp() {
     assertEqualsComplex(ans, makeComp(1.0, 1.5));
 }
 
+void testCmulComp(){
+    complex in ,ans;
+    testStart("cmulComp");
+
+    // (1+2j) * 3 = 3+6j
+    in = makeComp(1.0, 2.0);
+    ans = cmulComp(in, 3.0);
+    assertEqualsComplex(ans, makeComp(3.0, 6.0));
+
+    // (-1.5+2.0j) * (-2) = 3.0-4.0j
+    in = makeComp(-1.5, 2.0);
+    ans = cmulComp(in, -2.0);
+    assertEqualsComplex(ans, makeComp(3.0, -4.0));
+}
+
 // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -98,6 +113,7 @@ int main() {
     testFirst();
     testMakeComp(); //1
     testAddComp();  //3
+    testCmulComp(); //5
     // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
     //////////////////////////////////////////////////////////////////////////////////////////
