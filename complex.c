@@ -34,6 +34,11 @@ complex makeCompRT(double r, double theta) {
     );
 }
 
+complex subComp(complex a, complex b){
+    complex ans;
+
+}
+
 
 //↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)
 
