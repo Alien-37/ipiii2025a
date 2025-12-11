@@ -66,6 +66,37 @@ void testCmulComp(){
     assertEqualsComplex(ans, makeComp(3.0, -4.0));
 }
 
+void testGetR2() {
+    complex in;
+    double ans;
+    testStart("getR2");
+
+    // |3+4j|^2 = 25
+    in = makeComp(3.0, 4.0);
+    ans = getR2(in);
+    assertEqualsDouble(ans, 25.0);
+
+    // |1-2j|^2 = 5
+    in = makeComp(1.0, -2.0);
+    ans = getR2(in);
+    assertEqualsDouble(ans, 5.0);
+}
+
+void testInvComp() {
+    complex in, ans;
+    testStart("invComp");
+
+    // テスト1: 1/(1+0j) = 1+0j
+    in = makeComp(1.0, 0.0);
+    ans = invComp(in);
+    assertEqualsComplex(ans, makeComp(1.0, 0.0));
+
+    // テスト2: 1/(1+1j) = 0.5 - 0.5j
+    in = makeComp(1.0, 1.0);
+    ans = invComp(in);
+    assertEqualsComplex(ans, makeComp(0.5, -0.5));
+}
+
 // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -98,21 +129,7 @@ void testMakeCompRT() {
     ));
 }
 
-void testGetR2() {
-    complex in;
-    double ans;
-    testStart("getR2");
 
-    // |3+4j|^2 = 25
-    in = makeComp(3.0, 4.0);
-    ans = getR2(in);
-    assertEqualsDouble(ans, 25.0);
-
-    // |1-2j|^2 = 5
-    in = makeComp(1.0, -2.0);
-    ans = getR2(in);
-    assertEqualsDouble(ans, 5.0);
-}
 
 
 // ↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)
@@ -131,6 +148,7 @@ int main() {
     testAddComp();  //3
     testCmulComp(); //5
     testGetR2();    //7
+    testInvComp();  //9
     // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
     //////////////////////////////////////////////////////////////////////////////////////////
