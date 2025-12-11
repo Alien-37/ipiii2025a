@@ -75,7 +75,34 @@ complex makeCompRT(double r, double theta) {
 
 complex subComp(complex a, complex b){
     complex ans;
+    ans.real=a.real-b.real;
+    ans.image=a.real-b.real;
+    return ans;
+}
 
+complex mulComp(complex a,complex b){
+    complex ans;
+    ans.real=a.real*b.real;
+    ans.image=a.image*b.image;
+    return ans;
+}
+
+complex conjComp(complex a){
+    complex ans;
+    ans.real=a.real;
+    ans.image=a.image*-1;
+    return ans;
+}
+
+complex divComp(complex a,complex b){
+    complex ans;
+    ans.real=a.real/b.real;
+    ans.image=a.image/b.image;
+    return ans;
+}
+
+complex getTheta(complex a){
+    
 }
 
 
