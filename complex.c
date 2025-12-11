@@ -12,16 +12,27 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //↓↓↓↓ 3323 武中優成 記述部(雛形まで。この範囲以外には追加しない)
-complex makeComp(double real, double image) {
+
+complex makeComp(double real, double image) {   //1
     complex ans;
         ans.real = real;
         ans.image = image;
-    
-
-    return ans;   // 作った複素数を返す
+    return ans;   
 }
 
+complex addComp(complex a, complex b) {         //3
+    complex ans;
+    ans.real = a.real + b.real;
+    ans.image = a.image + b.image;
+    return ans;
+}
 
+complex cmulComp(complex a, double k){
+    complex ans;
+    ans.real = a.real * k;
+    ans.image = a.image * k;
+    return ans;
+}
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
