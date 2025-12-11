@@ -52,6 +52,13 @@ double getR(complex a) {
     return sqrt(getR2(a));
 }
 
+void printComp(complex a) {
+    if (a.image >= 0) {
+        printf("%g+%gj\n", a.real, a.image);
+    } else {
+        printf("%g%gj\n", a.real, a.image);
+    }
+}
 
 
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
