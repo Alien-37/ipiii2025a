@@ -64,14 +64,14 @@ complex makeCompRT(double r, double theta) {
 complex subComp(complex a, complex b){
     complex ans;
     ans.real=a.real-b.real;
-    ans.image=a.real-b.real;
+    ans.image=a.image-b.image;
     return ans;
 }
 
 complex mulComp(complex a,complex b){
     complex ans;
-    ans.real=a.real*b.real;
-    ans.image=a.image*b.image;
+    ans.real=a.real*b.real - a.image *b.image;
+    ans.image=a.real*b.image + a.image * b.real;
     return ans;
 }
 
@@ -84,15 +84,19 @@ complex conjComp(complex a){
 
 complex divComp(complex a,complex b){
     complex ans;
-    ans.real=a.real/b.real;
-    ans.image=a.image/b.image;
+    double denominator = b.real * b.real + b.image * b.image;
+    ans.real = (a.real * b.real + a.image * b.image) / denominator;
+    ans.image = (a.image * b.real - a.real * b.image) / denominator;
     return ans;
 }
 
-complex getTheta(complex a){
-    
+double getTheta(complex a){
+    return atan2(a.image, a.real);
 }
 
+void prontCompRT(complex a){
+
+}
 
 //↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)
 
