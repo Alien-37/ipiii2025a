@@ -27,12 +27,17 @@ complex addComp(complex a, complex b) {         //3
     return ans;
 }
 
-complex cmulComp(complex a, double k){
+complex cmulComp(complex a, double k){          //5
     complex ans;
     ans.real = a.real * k;
     ans.image = a.image * k;
     return ans;
 }
+
+double getR2(complex a){
+    return a.real * a.real + a.image * a.image;
+}
+
 //↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
 //////////////////////////////////////////////////////////////////////////////////////////
