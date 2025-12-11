@@ -86,15 +86,41 @@ void testInvComp() {
     complex in, ans;
     testStart("invComp");
 
-    // テスト1: 1/(1+0j) = 1+0j
+    // 1/(1+0j) = 1+0j
     in = makeComp(1.0, 0.0);
     ans = invComp(in);
     assertEqualsComplex(ans, makeComp(1.0, 0.0));
 
-    // テスト2: 1/(1+1j) = 0.5 - 0.5j
+    // 1/(1+1j) = 0.5 - 0.5j
     in = makeComp(1.0, 1.0);
     ans = invComp(in);
     assertEqualsComplex(ans, makeComp(0.5, -0.5));
+}
+
+void testGetR() {
+    complex in;
+    double ans;
+    testStart("getR");
+
+    // |3+4j|= 5
+    in = makeComp(3.0, 4.0);
+    ans = getR(in);
+    assertEqualsDouble(ans, 5.0);
+
+    // |1+0j| = 1
+    in = makeComp(1.0, 0.0);
+    ans = getR(in);
+    assertEqualsDouble(ans, 1.0);
+}
+
+void testPrintComp() {
+    complex a = makeComp(3.0, 4.0);
+    complex b = makeComp(5.0, -2.0);
+
+    testStart("printComp");
+
+    printComp(a);   // 3+4j
+    printComp(b);   // 5-2j
 }
 
 // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
@@ -149,6 +175,8 @@ int main() {
     testCmulComp(); //5
     testGetR2();    //7
     testInvComp();  //9
+    testGetR();     //11
+    testPrintComp();//13
     // ↑↑↑↑ ここまでを 3323 武中優成 が記述(この範囲以外には追加しない)
 
     //////////////////////////////////////////////////////////////////////////////////////////
