@@ -200,6 +200,12 @@ void testConjComp() {
     a = makeComp(3.0, 4.0);
     ans = conjComp(a);
     assertEqualsComplex(ans, makeComp(3.0, -4.0));
+
+    // conj(-3.5+4.5i) = -3.5-4.5i
+    a = makeComp(-3.5, 4.5);
+    ans = conjComp(a);
+    assertEqualsComplex(ans, makeComp(-3.5, -4.5));
+
 }
 
 // 10. 除算のテスト
@@ -213,6 +219,12 @@ void testDivComp() {
     b = makeComp(1.0, 2.0);
     ans = divComp(a, b);
     assertEqualsComplex(ans, makeComp(4.0, -3.0));
+
+    // (1+1i)/(1-1i) = 0+1i
+    a = makeComp(1.0, 1.0);
+    b = makeComp(1.0, -1.0);
+    ans = divComp(a, b);
+    assertEqualsComplex(ans, makeComp(0.0, 1.0));
 }
 
 // 12. 偏角のテスト (全象限)
