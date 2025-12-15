@@ -28,10 +28,10 @@ void testMakeComp() {
     ans = makeComp(1.0, 2.0);
     assertEqualsDouble(ans.real, 1.0);
     assertEqualsDouble(ans.image, 2.0);
-    // 3.4+5.6jを作成
-    ans = makeComp(3.4, 5.6);
-    assertEqualsDouble(ans.real, 3.4);
-    assertEqualsDouble(ans.image, 5.6);
+    // -3.4-5.6jを作成
+    ans = makeComp(-3.4, -5.6);
+    assertEqualsDouble(ans.real, -3.4);
+    assertEqualsDouble(ans.image, -5.6);
 }
 
 void testAddComp() {
