@@ -289,3 +289,4 @@ int main() {
     testErrorCheck();  // これは消さないこと
     return 0;
 }
+//直した四
