@@ -5,7 +5,7 @@
 #include "complex.h"
 #include "testCommon.h"
 
-//コンパイル通ったけど、M_PIの定義されてないってVScodeに言われたので自分で定義してます↓
+//12/8 コンパイル通ったけど、M_PIの定義されてないってVScodeに言われたので自分で定義してます↓
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
