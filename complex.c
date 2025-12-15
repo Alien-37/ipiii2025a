@@ -5,6 +5,10 @@
 #include <math.h>
 #include <stdio.h>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 // テスト作成者は雛形までを作成し、コンパイルができるまでを責任とします。
 // コンパイルができたところで、コミットしてください。
 //奇数を武中、偶数を俺でやる。
@@ -106,8 +110,16 @@ double getTheta(complex a){
     return atan2(a.image, a.real);
 }
 
-void prontCompRT(complex a){
+void printCompRT(complex a){
+    double r = sqrt(a.real * a.real + a.image * a.image);
+    
+    // 偏角 θ を計算 (getThetaを利用)
+    double thetaRad = getTheta(a);
+    
+    // 表示例が「45.000」となっているため、ラジアンを度に変換する
+    double thetaDeg = thetaRad * (180.0 / M_PI);
 
+    printf("%.3f∠%.3f\n", r, thetaDeg);
 }
 
 //↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)

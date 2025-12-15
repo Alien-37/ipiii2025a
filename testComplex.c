@@ -155,6 +155,97 @@ void testMakeCompRT() {
     ));
 }
 
+// 4. 減算のテスト
+void testSubComp() {
+    complex a, b, ans;
+    testStart("subComp");
+    
+    // (5+3i) - (2+1i) = 3+2i
+    a = makeComp(5.0, 3.0);
+    b = makeComp(2.0, 1.0);
+    ans = subComp(a, b);
+    assertEqualsComplex(ans, makeComp(3.0, 2.0));
+
+    // (1-1i) - (1-1i) = 0+0i
+    a = makeComp(1.0, -1.0);
+    b = makeComp(1.0, -1.0);
+    ans = subComp(a, b);
+    assertEqualsComplex(ans, makeComp(0.0, 0.0));
+}
+
+// 6. 乗算のテスト
+void testMulComp() {
+    complex a, b, ans;
+    testStart("mulComp");
+
+    // (2+3i) * (4+5i) = (8-15) + (10+12)i = -7+22i
+    a = makeComp(2.0, 3.0);
+    b = makeComp(4.0, 5.0);
+    ans = mulComp(a, b);
+    assertEqualsComplex(ans, makeComp(-7.0, 22.0));
+
+    // i * i = -1
+    a = makeComp(0.0, 1.0);
+    b = makeComp(0.0, 1.0);
+    ans = mulComp(a, b);
+    assertEqualsComplex(ans, makeComp(-1.0, 0.0));
+}
+
+// 8. 共役複素数のテスト
+void testConjComp() {
+    complex a, ans;
+    testStart("conjComp");
+
+    // conj(3+4i) = 3-4i
+    a = makeComp(3.0, 4.0);
+    ans = conjComp(a);
+    assertEqualsComplex(ans, makeComp(3.0, -4.0));
+}
+
+// 10. 除算のテスト
+void testDivComp() {
+    complex a, b, ans;
+    testStart("divComp");
+
+    // (10+5i) / (1+2i) = 4-3i
+    // 検算: (4-3i)(1+2i) = 4 + 8i - 3i - 6i^2 = 10+5i OK
+    a = makeComp(10.0, 5.0);
+    b = makeComp(1.0, 2.0);
+    ans = divComp(a, b);
+    assertEqualsComplex(ans, makeComp(4.0, -3.0));
+}
+
+// 12. 偏角のテスト (全象限)
+void testGetTheta() {
+    testStart("getTheta");
+
+    // 第1象限 (1, 1) -> 45度 (PI/4)
+    assertEqualsDouble(getTheta(makeComp(1.0, 1.0)), M_PI/4.0);
+
+    // 第2象限 (-1, 1) -> 135度 (3PI/4)
+    assertEqualsDouble(getTheta(makeComp(-1.0, 1.0)), 3.0*M_PI/4.0);
+
+    // 第3象限 (-1, -1) -> -135度 (-3PI/4)
+    assertEqualsDouble(getTheta(makeComp(-1.0, -1.0)), -3.0*M_PI/4.0);
+
+    // 第4象限 (1, -1) -> -45度 (-PI/4)
+    assertEqualsDouble(getTheta(makeComp(1.0, -1.0)), -M_PI/4.0);
+}
+
+// 14. 表示のテスト
+void testPrintCompRT() {
+    testStart("printCompRT");
+    
+    // 1+1i -> sqrt(2) ∠ 45度 -> 1.414∠45.000
+    printf("  [Expect]: 1.414∠45.000\n");
+    printf("  [Actual]: ");
+    printCompRT(makeComp(1.0, 1.0));
+
+    // 0+2i -> 2 ∠ 90度 -> 2.000∠90.000
+    printf("  [Expect]: 2.000∠90.000\n");
+    printf("  [Actual]: ");
+    printCompRT(makeComp(0.0, 2.0));
+}
 
 
 
@@ -184,7 +275,12 @@ int main() {
     // ↓↓↓↓ 3342 宮坂卓真 記述部(この範囲以外には追加しない)
     testSecond();
     testMakeCompRT();
-    
+    testSubComp();    //4 (追加)
+    testMulComp();    //6 (追加)
+    testConjComp();   //8 (追加)
+    testDivComp();    //10 (追加)
+    testGetTheta();   //12 (追加)
+    testPrintCompRT();//14 (追加)
     // ↑↑↑↑ ここまでを 3342 宮坂卓真 が記述(この範囲以外には追加しない)
 
     
