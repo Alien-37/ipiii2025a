@@ -8,6 +8,6 @@
 // このファイルは 3323 武中優成 が記述
 
 int main() {
-    printf("Hello, World\n");
+    printf("Hello, World\n"); //
     return 0;
 }
