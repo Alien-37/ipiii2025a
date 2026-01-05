@@ -10,8 +10,6 @@
 
 // このファイルは 3342 宮坂 卓真 が記述
 
-// このファイルは 3342 AAAAA が記述
-
 
 int main() {
     printf("Hello, world.\n");
