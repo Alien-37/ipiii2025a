@@ -1,4 +1,4 @@
-// X班 graphMain.c
+// a班 graphMain.c
 #include <stdio.h>
 
 #include "complex.h"

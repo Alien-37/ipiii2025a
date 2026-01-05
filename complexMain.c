@@ -1,7 +1,7 @@
-// ○班 complexMain.c
+// a班 complexMain.c
 
 // 複素数構造体を使う時には次の行を活かす
-//#include "complex.h"
+//  #include "complex.h"
 
 #include <stdio.h>
 
