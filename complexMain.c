@@ -9,7 +9,7 @@
 
 
 // このファイルは 3342 宮坂 卓真 が記述
-
+//aaa
 
 int main() {
     printf("Hello, world.\n");
