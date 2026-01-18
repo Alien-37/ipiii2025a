@@ -41,7 +41,7 @@ int main() {
     printComp(b2);
 
     t3a = addComp(a1,a2);
-    t3b = subComp(a1,a2);
+    t3b = subComp(a1,b1);
     t3c = mulComp(a2,b1);
     t3d = invComp(a1);
     t3e = divComp(mulComp(a1,b2),a3);
@@ -98,5 +98,6 @@ int main() {
 
     
 }
+
 
 
