@@ -1,5 +1,8 @@
 #include "testCommon.h"
+<<<<<<< HEAD
 #include "complex.h"    //←12/8追加
+=======
+>>>>>>> a97ddeb9bc5edd0ead77606ff86da0edef36c7d1
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // a班 graphMain.c
 #include <stdio.h>
 #include <math.h>
@@ -59,5 +60,18 @@ int main() {
         printf("%f\t%f\t%f\n", t, vt, it);
     }
 
+=======
+// X班 graphMain.c
+#include <stdio.h>
+
+#include "complex.h"
+
+/* このプログラムはブランチを分けてから個々に作成してください */
+
+// このファイルは 33aa AAAAA が記述
+
+int main() {
+    printf("Hello, World\n");
+>>>>>>> a97ddeb9bc5edd0ead77606ff86da0edef36c7d1
     return 0;
 }

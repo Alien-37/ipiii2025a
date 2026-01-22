@@ -62,7 +62,11 @@ graph: $(GRAPH_TARGET_EXE) $(PNGS) $(SVGS)
 	$(CHCP)
 	./$(GRAPH_TARGET_EXE)
 
+<<<<<<< HEAD
 test: clean $(TEST_TARGET_EXE)
+=======
+test: $(TEST_TARGET_EXE)
+>>>>>>> a97ddeb9bc5edd0ead77606ff86da0edef36c7d1
 	$(CHCP)
 	./${TEST_TARGET_EXE}
 

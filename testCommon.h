@@ -2,7 +2,11 @@
 #define __TEST_COMMON_H
 
 // 複素数構造体を使う時には次の行を活かす
+<<<<<<< HEAD
 #include "complex.h"
+=======
+//#include "complex.h"
+>>>>>>> a97ddeb9bc5edd0ead77606ff86da0edef36c7d1
 
 #include <assert.h>
 #include <math.h>
